@@ -5,6 +5,8 @@ import json from "koa-json";
 import bodyParser from "koa-bodyparser";
 import serve from 'koa-static-server';
 import {router as articles} from "./routes/articles";
+import {router as users} from "./routes/users";
+import {router as special} from "./routes/special";
 
 const app: Koa = new Koa();
 const router: Router = new Router();
@@ -25,10 +27,11 @@ router.get('/api/v1', welcomeAPI);
 
 app.use(logger());
 app.use(json());
-app.use(router.routes());
 
-// Other code statements go here
+app.use(router.routes());
 app.use(articles.routes());
+app.use(users.routes());
+app.use(special.routes());
 // app.use(router.routes()).use(router.allowedMethods());
 
 app.listen(10888, () => {

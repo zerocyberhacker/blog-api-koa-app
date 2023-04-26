@@ -6,6 +6,7 @@ import { basicAuth } from "../controllers/auth";
 
 // Since we are handling articles use a URI that begins with an appropriate path
 const router = new Router({prefix: '/api/v1/articles'});
+
 // Now we define the handler functions
 const getAll = async (ctx: RouterContext, next: any) => {
     let articles = await model.getAll();
