@@ -1,6 +1,7 @@
 # Need add the config file to config the database
-```html
-<h3>https://elephantsql.com/</h3>
+Elephantsql
+```
+https://elephantsql.com/</h3>
 ```
 ```
 let config = {
